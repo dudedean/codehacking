@@ -37,5 +37,10 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function photo()
+    {
+        return $this->belongsTo('App\Photo');
+    }
+
     
 }
