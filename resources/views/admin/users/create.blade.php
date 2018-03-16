@@ -5,6 +5,8 @@
 
     <h1>Create Users</h1>
 
+    @include('includes.form_error')
+
     {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store','files'=>true]) !!}
 
         <div class="form-group">
@@ -19,7 +21,7 @@
 
         <div class="form-group">
             {!! Form::label('role_id','Role:')!!}
-            {!! Form::select('role_id',[''=>'Choose Options'] + $roles,null,['class'=>'form-control'])!!}
+            {!! Form::select('role_id', $roles,null,['class'=>'form-control'])!!}
         </div>
 
         <div class="form-group">
@@ -43,7 +45,7 @@
 
     {!! Form::close() !!}
 
-    @include('includes.form_error')
+    
 
 @endsection
 
